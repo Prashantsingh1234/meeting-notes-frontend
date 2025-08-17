@@ -1,0 +1,146 @@
+/* App.css */
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  padding: 30px;
+  width: 600px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Title */
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+textarea:focus {
+  border: 1px solid #667eea;
+  box-shadow: 0px 0px 6px rgba(102, 126, 234, 0.6);
+}
+
+/* Input fields */
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  border: 1px solid #667eea;
+  box-shadow: 0px 0px 6px rgba(102, 126, 234, 0.6);
+}
+
+/* Buttons */
+button {
+  background: #667eea;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 20px;  /* ✅ Gap below button */
+}
+
+button:hover {
+  background: #5a67d8;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Generated Summary Box */
+.summary-box {
+  background: #f8f9ff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+  color: #000;   /* ✅ Black text inside summary */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+}
