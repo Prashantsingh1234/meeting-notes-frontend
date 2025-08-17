@@ -8,14 +8,29 @@ import "./App.css";  // Import CSS
 function App() {
   const [summary, setSummary] = useState("");
 
+  // Use environment variable for backend URL
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+  // Generate summary from transcript using backend
   const generateSummary = async (transcript, prompt) => {
-    const res = await axios.post("http://localhost:5000/api/summary", { transcript, prompt });
-    setSummary(res.data.summary);
+    try {
+      const res = await axios.post(`${API_URL}/api/summary`, { transcript, prompt });
+      setSummary(res.data.summary);
+    } catch (error) {
+      console.error("Error generating summary:", error);
+      alert("❌ Failed to generate summary. Please try again.");
+    }
   };
 
+  // Send email via backend
   const sendEmail = async (recipients) => {
-    await axios.post("http://localhost:5000/api/email", { recipients, summary });
-    alert("✅ Email sent successfully!");
+    try {
+      await axios.post(`${API_URL}/api/email`, { recipients, summary });
+      alert("✅ Email sent successfully!");
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("❌ Failed to send email. Please try again.");
+    }
   };
 
   return (
